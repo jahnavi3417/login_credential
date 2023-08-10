@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if show %}
+          {% for instance in show %}
+            <tr>
+              <td>{{ instance.f_name }}</td>
+              <td>{{ instance.l_name }}</td>
+              <td>{{ instance.email }}</td>
+              <td>
+                <a href="{% url 'delete' instance.pk %}" class="btn btn-danger">Delete</a>
+                <a href="{% url 'editing' instance.pk %}" class="btn btn-primary">Edit</a>
+              </td>
+            </tr>
+          {% endfor %} {% else %}
+            {% endif%}
+        </tbody>
+      </table>
+    
+{% endblock %}
+
+      
+
+
+  
+        
+
+      
+
+   

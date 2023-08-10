@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3 align="center">Enter Details</h3>
+    
+<body>
+    <form method="POST" align="center", enctype="multipart/form-data">
+        {% csrf_token %}
+      
+        
+        <!-- Form fields -->
+        <p>
+          <label for="{{ form.f_name.id_for_label }}">First Name:</label>
+          <input type="text" name="{{ form.f_name.name }}" id="{{ form.f_name.id_for_label }}">
+        </p>
+        <p>
+          <label for="{{ form.l_name.id_for_label }}">Last Name:</label>
+          <input type="text" name="{{ form.l_name.name }}" id="{{ form.l_name.id_for_label }}">
+        </p>
+        <p>
+          <label for="{{ form.email.id_for_label }}"> Student Email:</label>
+          <input type="email" name="{{ form.email.name }}" id="{{ form.email.id_for_label }}">
+        </p>
+        
+        <!-- Submit button -->
+        <button type="submit">Submit</button>
+      </form>
+      
+</body>
+
+
+
+ 
+
+{% endblock %}
